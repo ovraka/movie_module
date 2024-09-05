@@ -1,4 +1,4 @@
-import 'package:movie_module/model/model.dart';
+import 'package:movie_module/model/model_path.dart';
 import 'package:shared_module/shared.dart';
 
 abstract class MovieService {
