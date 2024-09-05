@@ -24,12 +24,13 @@ class DiscoverMovieScreen extends StatelessWidget {
                   itemCount: movieResponse.results.length,
                   itemBuilder: (context, index) {
                     final movie = movieResponse.results[index];
-                    return MovieItem(
-                      imagePath: movie.posterPath != null
-                          ? 'https://image.tmdb.org/t/p/w500${movie.posterPath}'
-                          : "",
-                      title: movie.title,
-                      subtitle: movie.id.toString(),
+                    return ListTile(
+                      leading: movie.posterPath != null
+                          ? Image.network(
+                              'https://image.tmdb.org/t/p/w500${movie.posterPath}')
+                          : const Icon(Icons.movie),
+                      title: Text(movie.title),
+                      subtitle: Text(movie.overview),
                     );
                   },
                 );
