@@ -26,9 +26,11 @@ class DiscoverMovieScreen extends StatelessWidget {
                     final movie = movieResponse.results[index];
                     return MovieItem(
                         imagePath:
-                            'https://image.tmdb.org/t/p/w500${movie.posterPath}',
-                        title: movie.title!,
-                        subtitle: movie.originalLanguage!);
+                            'https://image.tmdb.org/t/p/w500${movie.posterPath ?? ""}',
+                        title: movie.title != null ? movie.title! : "",
+                        subtitle: movie.originalLanguage != null
+                            ? movie.originalLanguage!
+                            : "");
                   },
                 );
               },
