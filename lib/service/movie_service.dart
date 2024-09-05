@@ -2,7 +2,7 @@ import 'package:movie_module/model/model_path.dart';
 import 'package:shared_module/shared.dart';
 
 class MovieService {
-  late final Dio _dio;
+  final Dio _dio = Dio();
 
   Future<MovieResponse> fetchMovie() async {
     final response = await _dio.get(
