@@ -23,8 +23,7 @@ mixin _$Movie {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
-  @JsonKey(name: 'poster_path')
-  String? get posterPath => throw _privateConstructorUsedError;
+  String get posterPath => throw _privateConstructorUsedError;
 
   /// Serializes this Movie to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -40,11 +39,7 @@ abstract class $MovieCopyWith<$Res> {
   factory $MovieCopyWith(Movie value, $Res Function(Movie) then) =
       _$MovieCopyWithImpl<$Res, Movie>;
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      String overview,
-      @JsonKey(name: 'poster_path') String? posterPath});
+  $Res call({int id, String title, String overview, String posterPath});
 }
 
 /// @nodoc
@@ -65,7 +60,7 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
     Object? id = null,
     Object? title = null,
     Object? overview = null,
-    Object? posterPath = freezed,
+    Object? posterPath = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -80,10 +75,10 @@ class _$MovieCopyWithImpl<$Res, $Val extends Movie>
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
               as String,
-      posterPath: freezed == posterPath
+      posterPath: null == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -95,11 +90,7 @@ abstract class _$$MovieImplCopyWith<$Res> implements $MovieCopyWith<$Res> {
       __$$MovieImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call(
-      {int id,
-      String title,
-      String overview,
-      @JsonKey(name: 'poster_path') String? posterPath});
+  $Res call({int id, String title, String overview, String posterPath});
 }
 
 /// @nodoc
@@ -118,7 +109,7 @@ class __$$MovieImplCopyWithImpl<$Res>
     Object? id = null,
     Object? title = null,
     Object? overview = null,
-    Object? posterPath = freezed,
+    Object? posterPath = null,
   }) {
     return _then(_$MovieImpl(
       id: null == id
@@ -133,10 +124,10 @@ class __$$MovieImplCopyWithImpl<$Res>
           ? _value.overview
           : overview // ignore: cast_nullable_to_non_nullable
               as String,
-      posterPath: freezed == posterPath
+      posterPath: null == posterPath
           ? _value.posterPath
           : posterPath // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -148,7 +139,7 @@ class _$MovieImpl implements _Movie {
       {required this.id,
       required this.title,
       required this.overview,
-      @JsonKey(name: 'poster_path') this.posterPath});
+      required this.posterPath});
 
   factory _$MovieImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieImplFromJson(json);
@@ -160,8 +151,7 @@ class _$MovieImpl implements _Movie {
   @override
   final String overview;
   @override
-  @JsonKey(name: 'poster_path')
-  final String? posterPath;
+  final String posterPath;
 
   @override
   String toString() {
@@ -206,7 +196,7 @@ abstract class _Movie implements Movie {
       {required final int id,
       required final String title,
       required final String overview,
-      @JsonKey(name: 'poster_path') final String? posterPath}) = _$MovieImpl;
+      required final String posterPath}) = _$MovieImpl;
 
   factory _Movie.fromJson(Map<String, dynamic> json) = _$MovieImpl.fromJson;
 
@@ -217,8 +207,7 @@ abstract class _Movie implements Movie {
   @override
   String get overview;
   @override
-  @JsonKey(name: 'poster_path')
-  String? get posterPath;
+  String get posterPath;
 
   /// Create a copy of Movie
   /// with the given fields replaced by the non-null parameter values.
