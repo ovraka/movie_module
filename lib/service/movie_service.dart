@@ -1,7 +1,7 @@
 import 'package:movie_module/model/model_path.dart';
 import 'package:shared_module/shared.dart';
 
-abstract class MovieService {
+class MovieService {
   final Dio _dio = Dio(
     BaseOptions(
       baseUrl: dotenv.env['BASE_URL']!,
