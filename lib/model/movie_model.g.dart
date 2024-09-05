@@ -10,7 +10,7 @@ _$MovieImpl _$$MovieImplFromJson(Map<String, dynamic> json) => _$MovieImpl(
       id: (json['id'] as num).toInt(),
       title: json['title'] as String,
       overview: json['overview'] as String,
-      posterPath: json['posterPath'] as String,
+      posterPath: json['posterPath'] as String?,
     );
 
 Map<String, dynamic> _$$MovieImplToJson(_$MovieImpl instance) =>

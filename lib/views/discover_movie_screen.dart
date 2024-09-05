@@ -25,8 +25,9 @@ class DiscoverMovieScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final movie = movieResponse.results[index];
                     return MovieItem(
-                      imagePath:
-                          'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                      imagePath: movie.posterPath != null
+                          ? 'https://image.tmdb.org/t/p/w500${movie.posterPath}'
+                          : "",
                       title: movie.title,
                       subtitle: movie.id.toString(),
                     );
