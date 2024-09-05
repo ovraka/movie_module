@@ -23,6 +23,7 @@ mixin _$Movie {
   int get id => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get overview => throw _privateConstructorUsedError;
+  @JsonKey(name: 'poster_path')
   String? get posterPath => throw _privateConstructorUsedError;
 
   /// Serializes this Movie to a JSON map.
@@ -39,7 +40,11 @@ abstract class $MovieCopyWith<$Res> {
   factory $MovieCopyWith(Movie value, $Res Function(Movie) then) =
       _$MovieCopyWithImpl<$Res, Movie>;
   @useResult
-  $Res call({int id, String title, String overview, String? posterPath});
+  $Res call(
+      {int id,
+      String title,
+      String overview,
+      @JsonKey(name: 'poster_path') String? posterPath});
 }
 
 /// @nodoc
@@ -90,7 +95,11 @@ abstract class _$$MovieImplCopyWith<$Res> implements $MovieCopyWith<$Res> {
       __$$MovieImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({int id, String title, String overview, String? posterPath});
+  $Res call(
+      {int id,
+      String title,
+      String overview,
+      @JsonKey(name: 'poster_path') String? posterPath});
 }
 
 /// @nodoc
@@ -139,7 +148,7 @@ class _$MovieImpl implements _Movie {
       {required this.id,
       required this.title,
       required this.overview,
-      this.posterPath});
+      @JsonKey(name: 'poster_path') this.posterPath});
 
   factory _$MovieImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieImplFromJson(json);
@@ -151,6 +160,7 @@ class _$MovieImpl implements _Movie {
   @override
   final String overview;
   @override
+  @JsonKey(name: 'poster_path')
   final String? posterPath;
 
   @override
@@ -196,7 +206,7 @@ abstract class _Movie implements Movie {
       {required final int id,
       required final String title,
       required final String overview,
-      final String? posterPath}) = _$MovieImpl;
+      @JsonKey(name: 'poster_path') final String? posterPath}) = _$MovieImpl;
 
   factory _Movie.fromJson(Map<String, dynamic> json) = _$MovieImpl.fromJson;
 
@@ -207,6 +217,7 @@ abstract class _Movie implements Movie {
   @override
   String get overview;
   @override
+  @JsonKey(name: 'poster_path')
   String? get posterPath;
 
   /// Create a copy of Movie

@@ -9,7 +9,7 @@ class Movie with _$Movie {
     required int id,
     required String title,
     required String overview,
-    String? posterPath,
+    @JsonKey(name: 'poster_path') String? posterPath,
   }) = _Movie;
 
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
