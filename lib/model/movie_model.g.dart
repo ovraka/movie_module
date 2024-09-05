@@ -6,26 +6,25 @@ part of 'movie_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$MovieModelImpl _$$MovieModelImplFromJson(Map<String, dynamic> json) =>
-    _$MovieModelImpl(
-      id: (json['id'] as num?)?.toInt(),
-      title: json['title'] as String?,
-      posterPath: json['posterPath'] as String?,
-      originalLanguage: json['originalLanguage'] as String?,
+_$MovieImpl _$$MovieImplFromJson(Map<String, dynamic> json) => _$MovieImpl(
+      id: (json['id'] as num).toInt(),
+      title: json['title'] as String,
+      overview: json['overview'] as String,
+      posterPath: json['posterPath'] as String,
     );
 
-Map<String, dynamic> _$$MovieModelImplToJson(_$MovieModelImpl instance) =>
+Map<String, dynamic> _$$MovieImplToJson(_$MovieImpl instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,
+      'overview': instance.overview,
       'posterPath': instance.posterPath,
-      'originalLanguage': instance.originalLanguage,
     };
 
 _$MovieResponseImpl _$$MovieResponseImplFromJson(Map<String, dynamic> json) =>
     _$MovieResponseImpl(
       results: (json['results'] as List<dynamic>)
-          .map((e) => MovieModel.fromJson(e as Map<String, dynamic>))
+          .map((e) => Movie.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 

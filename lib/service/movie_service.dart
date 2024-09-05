@@ -2,33 +2,18 @@ import 'package:movie_module/model/model_path.dart';
 import 'package:shared_module/shared.dart';
 
 class MovieService {
-  final Dio _dio = Dio(
-    BaseOptions(
-      baseUrl: dotenv.env['BASE_URL']!,
-      connectTimeout: const Duration(seconds: 30),
-      receiveTimeout: const Duration(seconds: 30),
-      sendTimeout: const Duration(seconds: 30),
-      validateStatus: (_) => true,
+  late final Dio _dio;
+
+  Future<MovieResponse> fetchMovie() async {
+    final response = await _dio.get(
+      '${dotenv.env['BASE_URL']}$UrlList.discoverMovie',
       queryParameters: {
         'api_key': dotenv.env['API_KEY'],
       },
-    ),
-  );
+    );
 
-  Future<MovieResponse> fetchMovie() async {
-    try {
-      final response = await _dio.get(
-        UrlList.discoverMovie,
-      );
+    debugPrint('${response.data}');
 
-      if (response.statusCode == 200) {
-        debugPrint("RESPONSE : ${response.data}");
-        return MovieResponse.fromJson(response.data);
-      }
-
-      throw Exception('Error');
-    } catch (e) {
-      rethrow;
-    }
+    return MovieResponse.fromJson(response.data);
   }
 }

@@ -1,26 +1,24 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:flutter/foundation.dart';
 
 part 'movie_model.freezed.dart';
 part 'movie_model.g.dart';
 
 @freezed
-class MovieModel with _$MovieModel {
-  const factory MovieModel({
-    int? id,
-    String? title,
-    String? posterPath,
-    String? originalLanguage,
-  }) = _MovieModel;
+class Movie with _$Movie {
+  factory Movie({
+    required int id,
+    required String title,
+    required String overview,
+    required String posterPath,
+  }) = _Movie;
 
-  factory MovieModel.fromJson(Map<String, dynamic> json) =>
-      _$MovieModelFromJson(json);
+  factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
 }
 
 @freezed
 class MovieResponse with _$MovieResponse {
   factory MovieResponse({
-    required List<MovieModel> results,
+    required List<Movie> results,
   }) = _MovieResponse;
 
   factory MovieResponse.fromJson(Map<String, dynamic> json) =>
