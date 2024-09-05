@@ -6,10 +6,8 @@ class MovieService {
 
   Future<MovieResponse> fetchMovie() async {
     final response = await _dio.get(
-      '${dotenv.env['BASE_URL']}${UrlList.discoverMovie}',
-      queryParameters: {
-        'api_key': dotenv.env['API_KEY'],
-      },
+      'https://api.themoviedb.org/3/discover/movie',
+      queryParameters: {'api_key': 'c9bf7512a3ce71e9db46a77ddf167982'},
     );
 
     debugPrint('${response.data}');
