@@ -22,6 +22,7 @@ class MovieService {
       );
 
       if (response.statusCode == 200) {
+        debugPrint("RESPONSE : ${response.data}");
         return MovieResponse.fromJson(response.data);
       }
 
