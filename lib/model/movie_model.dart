@@ -13,6 +13,16 @@ class MovieModel with _$MovieModel {
     required String originalLanguage,
   }) = _MovieModel;
 
-  factory MovieModel.fromJson(Map<String, Object?> json) =>
+  factory MovieModel.fromJson(Map<String, dynamic> json) =>
       _$MovieModelFromJson(json);
+}
+
+@freezed
+class MovieResponse with _$MovieResponse {
+  factory MovieResponse({
+    required List<MovieModel> results,
+  }) = _MovieResponse;
+
+  factory MovieResponse.fromJson(Map<String, dynamic> json) =>
+      _$MovieResponseFromJson(json);
 }

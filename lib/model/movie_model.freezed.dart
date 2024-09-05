@@ -234,3 +234,170 @@ abstract class _MovieModel implements MovieModel {
   _$$MovieModelImplCopyWith<_$MovieModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+MovieResponse _$MovieResponseFromJson(Map<String, dynamic> json) {
+  return _MovieResponse.fromJson(json);
+}
+
+/// @nodoc
+mixin _$MovieResponse {
+  List<MovieModel> get results => throw _privateConstructorUsedError;
+
+  /// Serializes this MovieResponse to a JSON map.
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+
+  /// Create a copy of MovieResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $MovieResponseCopyWith<MovieResponse> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $MovieResponseCopyWith<$Res> {
+  factory $MovieResponseCopyWith(
+          MovieResponse value, $Res Function(MovieResponse) then) =
+      _$MovieResponseCopyWithImpl<$Res, MovieResponse>;
+  @useResult
+  $Res call({List<MovieModel> results});
+}
+
+/// @nodoc
+class _$MovieResponseCopyWithImpl<$Res, $Val extends MovieResponse>
+    implements $MovieResponseCopyWith<$Res> {
+  _$MovieResponseCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of MovieResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? results = null,
+  }) {
+    return _then(_value.copyWith(
+      results: null == results
+          ? _value.results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$MovieResponseImplCopyWith<$Res>
+    implements $MovieResponseCopyWith<$Res> {
+  factory _$$MovieResponseImplCopyWith(
+          _$MovieResponseImpl value, $Res Function(_$MovieResponseImpl) then) =
+      __$$MovieResponseImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({List<MovieModel> results});
+}
+
+/// @nodoc
+class __$$MovieResponseImplCopyWithImpl<$Res>
+    extends _$MovieResponseCopyWithImpl<$Res, _$MovieResponseImpl>
+    implements _$$MovieResponseImplCopyWith<$Res> {
+  __$$MovieResponseImplCopyWithImpl(
+      _$MovieResponseImpl _value, $Res Function(_$MovieResponseImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of MovieResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? results = null,
+  }) {
+    return _then(_$MovieResponseImpl(
+      results: null == results
+          ? _value._results
+          : results // ignore: cast_nullable_to_non_nullable
+              as List<MovieModel>,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$MovieResponseImpl
+    with DiagnosticableTreeMixin
+    implements _MovieResponse {
+  _$MovieResponseImpl({required final List<MovieModel> results})
+      : _results = results;
+
+  factory _$MovieResponseImpl.fromJson(Map<String, dynamic> json) =>
+      _$$MovieResponseImplFromJson(json);
+
+  final List<MovieModel> _results;
+  @override
+  List<MovieModel> get results {
+    if (_results is EqualUnmodifiableListView) return _results;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_results);
+  }
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'MovieResponse(results: $results)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'MovieResponse'))
+      ..add(DiagnosticsProperty('results', results));
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$MovieResponseImpl &&
+            const DeepCollectionEquality().equals(other._results, _results));
+  }
+
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_results));
+
+  /// Create a copy of MovieResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$MovieResponseImplCopyWith<_$MovieResponseImpl> get copyWith =>
+      __$$MovieResponseImplCopyWithImpl<_$MovieResponseImpl>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$MovieResponseImplToJson(
+      this,
+    );
+  }
+}
+
+abstract class _MovieResponse implements MovieResponse {
+  factory _MovieResponse({required final List<MovieModel> results}) =
+      _$MovieResponseImpl;
+
+  factory _MovieResponse.fromJson(Map<String, dynamic> json) =
+      _$MovieResponseImpl.fromJson;
+
+  @override
+  List<MovieModel> get results;
+
+  /// Create a copy of MovieResponse
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$MovieResponseImplCopyWith<_$MovieResponseImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

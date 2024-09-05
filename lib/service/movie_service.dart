@@ -15,16 +15,14 @@ abstract class MovieService {
     ),
   );
 
-  Future<MovieModel> fetchMovie() async {
+  Future<MovieResponse> fetchMovie() async {
     try {
       final response = await _dio.get(
         UrlList.discoverMovie,
       );
 
       if (response.statusCode == 200) {
-        // var results = response.data['results'] as List<MovieModel>;
-        // var data = results.map((json) => MovieModel.fromJson(json)).toList();
-        // return data;
+        return MovieResponse.fromJson(response.data);
       }
 
       throw Exception('Error');

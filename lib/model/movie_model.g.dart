@@ -21,3 +21,15 @@ Map<String, dynamic> _$$MovieModelImplToJson(_$MovieModelImpl instance) =>
       'posterPath': instance.posterPath,
       'originalLanguage': instance.originalLanguage,
     };
+
+_$MovieResponseImpl _$$MovieResponseImplFromJson(Map<String, dynamic> json) =>
+    _$MovieResponseImpl(
+      results: (json['results'] as List<dynamic>)
+          .map((e) => MovieModel.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+Map<String, dynamic> _$$MovieResponseImplToJson(_$MovieResponseImpl instance) =>
+    <String, dynamic>{
+      'results': instance.results,
+    };
