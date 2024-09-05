@@ -7,6 +7,7 @@ part 'movie_model.g.dart';
 @freezed
 class MovieModel with _$MovieModel {
   const factory MovieModel({
+    int? id,
     String? title,
     String? posterPath,
     String? originalLanguage,

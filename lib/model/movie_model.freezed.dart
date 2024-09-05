@@ -20,6 +20,7 @@ MovieModel _$MovieModelFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MovieModel {
+  int? get id => throw _privateConstructorUsedError;
   String? get title => throw _privateConstructorUsedError;
   String? get posterPath => throw _privateConstructorUsedError;
   String? get originalLanguage => throw _privateConstructorUsedError;
@@ -40,7 +41,8 @@ abstract class $MovieModelCopyWith<$Res> {
           MovieModel value, $Res Function(MovieModel) then) =
       _$MovieModelCopyWithImpl<$Res, MovieModel>;
   @useResult
-  $Res call({String? title, String? posterPath, String? originalLanguage});
+  $Res call(
+      {int? id, String? title, String? posterPath, String? originalLanguage});
 }
 
 /// @nodoc
@@ -58,11 +60,16 @@ class _$MovieModelCopyWithImpl<$Res, $Val extends MovieModel>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? posterPath = freezed,
     Object? originalLanguage = freezed,
   }) {
     return _then(_value.copyWith(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -87,7 +94,8 @@ abstract class _$$MovieModelImplCopyWith<$Res>
       __$$MovieModelImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String? title, String? posterPath, String? originalLanguage});
+  $Res call(
+      {int? id, String? title, String? posterPath, String? originalLanguage});
 }
 
 /// @nodoc
@@ -103,11 +111,16 @@ class __$$MovieModelImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? id = freezed,
     Object? title = freezed,
     Object? posterPath = freezed,
     Object? originalLanguage = freezed,
   }) {
     return _then(_$MovieModelImpl(
+      id: freezed == id
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
+              as int?,
       title: freezed == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
@@ -127,11 +140,14 @@ class __$$MovieModelImplCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$MovieModelImpl with DiagnosticableTreeMixin implements _MovieModel {
-  const _$MovieModelImpl({this.title, this.posterPath, this.originalLanguage});
+  const _$MovieModelImpl(
+      {this.id, this.title, this.posterPath, this.originalLanguage});
 
   factory _$MovieModelImpl.fromJson(Map<String, dynamic> json) =>
       _$$MovieModelImplFromJson(json);
 
+  @override
+  final int? id;
   @override
   final String? title;
   @override
@@ -141,7 +157,7 @@ class _$MovieModelImpl with DiagnosticableTreeMixin implements _MovieModel {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'MovieModel(title: $title, posterPath: $posterPath, originalLanguage: $originalLanguage)';
+    return 'MovieModel(id: $id, title: $title, posterPath: $posterPath, originalLanguage: $originalLanguage)';
   }
 
   @override
@@ -149,6 +165,7 @@ class _$MovieModelImpl with DiagnosticableTreeMixin implements _MovieModel {
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'MovieModel'))
+      ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('posterPath', posterPath))
       ..add(DiagnosticsProperty('originalLanguage', originalLanguage));
@@ -159,6 +176,7 @@ class _$MovieModelImpl with DiagnosticableTreeMixin implements _MovieModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$MovieModelImpl &&
+            (identical(other.id, id) || other.id == id) &&
             (identical(other.title, title) || other.title == title) &&
             (identical(other.posterPath, posterPath) ||
                 other.posterPath == posterPath) &&
@@ -169,7 +187,7 @@ class _$MovieModelImpl with DiagnosticableTreeMixin implements _MovieModel {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   int get hashCode =>
-      Object.hash(runtimeType, title, posterPath, originalLanguage);
+      Object.hash(runtimeType, id, title, posterPath, originalLanguage);
 
   /// Create a copy of MovieModel
   /// with the given fields replaced by the non-null parameter values.
@@ -189,13 +207,16 @@ class _$MovieModelImpl with DiagnosticableTreeMixin implements _MovieModel {
 
 abstract class _MovieModel implements MovieModel {
   const factory _MovieModel(
-      {final String? title,
+      {final int? id,
+      final String? title,
       final String? posterPath,
       final String? originalLanguage}) = _$MovieModelImpl;
 
   factory _MovieModel.fromJson(Map<String, dynamic> json) =
       _$MovieModelImpl.fromJson;
 
+  @override
+  int? get id;
   @override
   String? get title;
   @override
