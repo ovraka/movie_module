@@ -8,9 +8,9 @@ part of 'movie_model.dart';
 
 _$MovieModelImpl _$$MovieModelImplFromJson(Map<String, dynamic> json) =>
     _$MovieModelImpl(
-      title: json['title'] as String,
-      posterPath: json['posterPath'] as String,
-      originalLanguage: json['originalLanguage'] as String,
+      title: json['title'] as String?,
+      posterPath: json['posterPath'] as String?,
+      originalLanguage: json['originalLanguage'] as String?,
     );
 
 Map<String, dynamic> _$$MovieModelImplToJson(_$MovieModelImpl instance) =>

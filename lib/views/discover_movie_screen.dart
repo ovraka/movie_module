@@ -27,8 +27,8 @@ class DiscoverMovieScreen extends StatelessWidget {
                     return MovieItem(
                         imagePath:
                             'https://image.tmdb.org/t/p/w500${movie.posterPath}',
-                        title: movie.title,
-                        subtitle: movie.originalLanguage);
+                        title: movie.title!,
+                        subtitle: movie.originalLanguage!);
                   },
                 );
               },

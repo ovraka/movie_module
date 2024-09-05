@@ -7,9 +7,9 @@ part 'movie_model.g.dart';
 @freezed
 class MovieModel with _$MovieModel {
   const factory MovieModel({
-    required String title,
-    required String posterPath,
-    required String originalLanguage,
+    String? title,
+    String? posterPath,
+    String? originalLanguage,
   }) = _MovieModel;
 
   factory MovieModel.fromJson(Map<String, dynamic> json) =>
