@@ -23,13 +23,22 @@ class DiscoverMovieScreen extends StatelessWidget {
                 return ListView.builder(
                   itemCount: movieResponse.results.length,
                   itemBuilder: (context, index) {
-                    final movie = movieResponse.results[index];
-                    return MovieItem(
-                      imagePath:
-                          'https://image.tmdb.org/t/p/w500${movie.posterPath}',
-                      title: movie.title,
-                      subtitle: movie.overview,
+                    // final movie = movieResponse.results[index];
+                    return
+                        // Column(
+                        // children: [
+                        Image.asset(
+                      'assets/icons/done.png',
+                      scale: 50,
                     );
+                    // MovieItem(
+                    //   imagePath:
+                    //       'https://image.tmdb.org/t/p/w500${movie.posterPath}',
+                    //   title: movie.title,
+                    //   subtitle: movie.overview,
+                    // ),
+                    //   ],
+                    // );
                   },
                 );
               },
