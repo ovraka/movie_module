@@ -28,7 +28,7 @@ class DiscoverMovieScreen extends StatelessWidget {
                         // Column(
                         // children: [
                         Image.asset(
-                      'assets/icons/done.png',
+                      'packages/assets/icons/ic_location.png',
                       scale: 50,
                     );
                     // MovieItem(
