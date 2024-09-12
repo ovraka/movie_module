@@ -517,7 +517,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "717c3cec26c0a128f4f434f7c1be2cecafd71761"
+      resolved-ref: b867efe2ba324a27021b2b93fc2f33faefbf8b86
       url: "https://github.com/ovraka/shared_module.git"
     source: git
     version: "1.0.0+1"
