@@ -186,10 +186,10 @@ packages:
     dependency: transitive
     description:
       name: dart_style
-      sha256: "99e066ce75c89d6b29903d788a7bb9369cf754f7b24bf70bf4b6d6d6b26853b9"
+      sha256: "7856d364b589d1f08986e140938578ed36ed948581fbc3bc9aef1805039ac5ab"
       url: "https://pub.dev"
     source: hosted
-    version: "2.3.6"
+    version: "2.3.7"
   dio:
     dependency: "direct main"
     description:
@@ -517,7 +517,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "71198f331ea98c7e6340e933ec0516e2c839c867"
+      resolved-ref: "717c3cec26c0a128f4f434f7c1be2cecafd71761"
       url: "https://github.com/ovraka/shared_module.git"
     source: git
     version: "1.0.0+1"
